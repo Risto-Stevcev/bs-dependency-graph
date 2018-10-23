@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const path = require('path')
 const { readFileSync } = require('fs')
 const { set, update } = require('seamless-immutable').static
