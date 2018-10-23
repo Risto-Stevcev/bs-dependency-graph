@@ -1,0 +1,29 @@
+{
+  "name": "bs-dependency-graph",
+  "version": "1.0.0",
+  "description": "Generates a dependency graph for a bucklescript project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Risto-Stevcev/bs-dependency-graph.git"
+  },
+  "keywords": [
+    "bucklescript",
+    "dependency",
+    "graph"
+  ],
+  "author": "Risto Stevcev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Risto-Stevcev/bs-dependency-graph/issues"
+  },
+  "homepage": "https://github.com/Risto-Stevcev/bs-dependency-graph#readme",
+  "dependencies": {
+    "bs-source-files": "^1.0.0",
+    "lodash": "^4.17.11",
+    "seamless-immutable": "^7.1.4"
+  }
+}
