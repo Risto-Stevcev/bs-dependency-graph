@@ -24,11 +24,19 @@ const dependencyGraph = files => {
     const moduleName = path.basename(file).replace(/\.[a-z]+$/, '')
 
     var stack = [moduleName]
+    var comment = 0
     return readFileSync(file, 'utf8').split('\n').reduce((acc, line) => {
       const tokens = line.split(/\s+/)
 
       return tokens.reduce((acc, token, index) => {
-        if (/^(struct|object|begin)$/.test(token))
+        if (/^\(\*/.test(token))
+          comment++
+        if (/\*\)$/.test(token))
+          comment--
+
+        if (comment > 0) return acc
+
+        if (/^(struct|object|sig|begin)$/.test(token))
           stack.push(token === 'struct' ? getModuleName(tokens.slice(0, index)) : token)
         if (token === 'end')
           stack.pop()
@@ -54,7 +62,6 @@ const dependencyGraph = files => {
       }, acc)
     }, acc)
   }, {})
-
 
   return Object.entries(g).reduce((acc, [key, {opens, calls}]) => {
     if (!key) return acc
