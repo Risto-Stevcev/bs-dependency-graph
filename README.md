@@ -1,6 +1,6 @@
 # bs-dependency-graph
 
-Generates a dependency graph for a bucklescript project
+Generates the module dependency graph for a bucklescript project
 
 ## Usage
 
@@ -17,7 +17,7 @@ $ npm install --save-dev json-to-dot
 ```
 
 And if you have graphviz installed, you can convert the dot format to an image 
-using the `dot` command.
+using the `dot` command, and then preview it with ImageMagick.
 
 Combining these together, you can add it as a command in your `package.json`:
 
@@ -29,19 +29,18 @@ Combining these together, you can add it as a command in your `package.json`:
   "scripts": {
     "graph:dot": "bs-dependency-graph | json-to-dot > graph.dot",
     "graph:image": "dot -Tpng graph.dot -o graph.png",
+    "graph:view": "display graph.png",
     "graph": "npm run graph:dot && npm run graph:image"
   },
   ...
 }
 ```
 
-## Limitations
+## How it Works
 
-This library is *severely* limited. It very loosely has a "lexer+parser": it 
-tokenizes the files, and uses a stack to navigate module scope as you might for 
-a CFG. It doesn't track external dependencies like included libraries, and it 
-likely won't handle some corner cases. It's not ideal but it's better than 
-nothing.
+The library fetches all of your project files based on the settings in 
+`bsconfig.json` and then runs `ocamldep` on the files to get the dependency graph
+
 
 ## License
 
