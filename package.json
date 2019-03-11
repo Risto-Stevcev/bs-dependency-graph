@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "bats ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/Risto-Stevcev/bs-dependency-graph#readme",
   "dependencies": {
-    "bs-source-files": "^1.0.0"
+    "bs-source-files": "^1.2.0"
+  },
+  "devDependencies": {
+    "bats": "^1.1.0"
   }
 }

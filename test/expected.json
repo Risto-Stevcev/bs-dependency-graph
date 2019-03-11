@@ -1,0 +1,14 @@
+{
+  "Foo": [
+    "Foo_Bar",
+    "Foo_Baz"
+  ],
+  "Norf": [
+    "Util"
+  ],
+  "Util": [],
+  "Foo_Bar": [],
+  "Foo_Baz": [
+    "Util"
+  ]
+}
