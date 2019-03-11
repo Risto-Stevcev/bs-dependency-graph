@@ -1,5 +1,9 @@
 # bs-dependency-graph
 
+[![Build Status](https://travis-ci.org/Risto-Stevcev/bs-dependency-graph.svg?branch=master)](https://travis-ci.org/Risto-Stevcev/bs-dependency-graph)
+[![Latest release](https://img.shields.io/npm/v/bs-dependency-graph.svg?style=flat)](https://www.npmjs.com/package/bs-dependency-graph)
+[![License](https://img.shields.io/npm/l/bs-dependency-graph.svg?style=flat)](https://github.com/Risto-Stevcev/bs-dependency-graph/blob/master/LICENSE)
+
 Generates the module dependency graph for a bucklescript project
 
 ## Usage
